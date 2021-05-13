@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Parallax</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <section>
+      <div id="layer_1"  class="img-parallax"></div>
+      <div id="layer_2"  class="img-parallax""></div>
+      <div id="layer_3"  class="img-parallax"></div>
+      <div id="layer_4"  class="img-parallax"></div>
+    </section>
+
+    <article id="content">
+      <script>
+        for(var i=1; i < 50; i++)
+        { 
+          document.write('<h1>Testando parallax' +i+ '</h1>'); 
+        } 
+
+		function parallax(){
+			// Declarando as var.
+			var layer_1 = document.getElementById('layer_1');
+			var layer_2 = document.getElementById('layer_2');
+			var layer_3 = document.getElementById('layer_3');
+			var layer_4 = document.getElementById('layer_4');
+
+			// Aplicando a posição
+			layer_1.style.top = -(window.pageYOffset / 3) + 'px';
+			layer_2.style.top = -(window.pageYOffset / 6) + 'px';
+			layer_3.style.top = -(window.pageYOffset / 7) + 'px';
+			layer_4.style.top = -(window.pageYOffset / 7) + 'px';
+		}
+		window.addEventListener("scroll", parallax, false);
+
+	</script> 
+    </article>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
